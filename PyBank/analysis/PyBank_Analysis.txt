@@ -1,0 +1,6 @@
+Financial Analysis
+-------------------------------
+Total Month:86
+Total Profits and Loss:$38382578
+Average PNL Change:$7803.476744186047Greatest increase PNL:Feb-12 1926159
+Greatest decrease PNL:Sep-13 -2196167
