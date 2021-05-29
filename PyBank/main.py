@@ -52,7 +52,7 @@ with open (Pybank_csv) as Pybank_csv:
 
 #Name and path of the result txt file    
 PyBank_AnalysisName=os.path.join("..","PyBank","analysis","PyBank_Analysis.txt")
-#print the results in txt file
+#print the results in txt file line by line
 PyBank_Analysis=open(PyBank_AnalysisName, "w")
 PyBank_Analysis.write("Financial Analysis\n")
 PyBank_Analysis.write("-------------------------------\n")
