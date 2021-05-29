@@ -55,16 +55,16 @@ with open (Pypoll_csv) as Pypoll_csv:
     
       
 
-# #Name and path of the result txt file    
-# PyBank_AnalysisName=os.path.join("..","PyBank","analysis","PyBank_Analysis.txt")
-# #print the results in txt file
-# PyBank_Analysis=open(PyBank_AnalysisName, "w")
-# PyBank_Analysis.write("Financial Analysis\n")
-# PyBank_Analysis.write("-------------------------------\n")
-# PyBank_Analysis.write("Total Month:"+str(count)+"\n")
-# PyBank_Analysis.write("Total Profits and Loss:"+"$"+str(Total_PNL)+"\n")
-# PyBank_Analysis.write("Average PNL Change:"+"$"+str(Average_Change_PNL))
-# PyBank_Analysis.write("Greatest increase PNL:"+str(Related_increase_month)+" "+str(Greatest_increase_PNL)+"\n")
-# PyBank_Analysis.write("Greatest decrease PNL:"+str(Related_decrease_month)+" "+str(Greatest_decrease_PNL)+"\n")
+#Name and path of the result txt file    
+PyPoll_AnalysisName=os.path.join("..","PyPoll","analysis","PyPoll_Analysis.txt")
+#print the results in txt file
+PyPoll_Analysis=open(PyPoll_AnalysisName, "w")
+PyPoll_Analysis.write("Election Results\n")
+PyPoll_Analysis.write("-------------------------------\n")
+PyPoll_Analysis.write("Total Votes:"+str(count))+"\n")
+PyPoll_Analysis.write("Total Profits and Loss:"+"$"+str(Total_PNL)+"\n")
+PyPoll_Analysis.write("Average PNL Change:"+"$"+str(Average_Change_PNL))
+PyPoll_Analysis.write("Greatest increase PNL:"+str(Related_increase_month)+" "+str(Greatest_increase_PNL)+"\n")
+PyPoll_Analysis.write("Greatest decrease PNL:"+str(Related_decrease_month)+" "+str(Greatest_decrease_PNL)+"\n")
 
-# PyBank_Analysis.close()
+PyPoll_Analysis.close()
