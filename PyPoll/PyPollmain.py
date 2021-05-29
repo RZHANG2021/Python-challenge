@@ -8,7 +8,12 @@ candidate_Name=[]
 #set up the voter_dictionary
 Voter_count={}
 
-#set path for the file
+
+#Name and path of the result txt file    
+PyPoll_AnalysisName=os.path.join("..","PyPoll","analysis","PyPoll_Analysis.txt")
+#print the results in txt file
+PyPoll_Analysis=open(PyPoll_AnalysisName, "w")
+#set path for the readerfile
 Pypoll_csv=os.path.join("..","PyPoll","Resources","PyPoll_Resources_election_data.csv")
 
 with open (Pypoll_csv) as Pypoll_csv:
@@ -34,6 +39,10 @@ with open (Pypoll_csv) as Pypoll_csv:
     print("Total Votes:"+str(count))
     print("-------------------------------")
 
+    PyPoll_Analysis.write("Election Results\n")
+    PyPoll_Analysis.write("-------------------------------\n")
+    PyPoll_Analysis.write("Total Votes:"+str(count)+"\n")
+
    # to list all candidates votes count and the winner 
     for candidate_Name in Voter_count:
        votes= Voter_count.get(candidate_Name)
@@ -44,7 +53,8 @@ with open (Pypoll_csv) as Pypoll_csv:
        voting_result = (f'{candidate_Name}": {vote_percentage:.4f}% ({votes}) \n' )
 
        print(voting_result,end="")
-       
+       PyPoll_Analysis.write(voting_result)
+
        if votes>winning_votes:
             winning_votes=votes
             winner=candidate_Name
@@ -53,18 +63,10 @@ with open (Pypoll_csv) as Pypoll_csv:
     print("Winner:"+str(winner))
     print("-------------------------------")
     
-      
+    PyPoll_Analysis.write("-------------------------------\n")
+    PyPoll_Analysis.write("Winner:"+str(winner)+"\n")
+    PyPoll_Analysis.write("-------------------------------\n")
 
-#Name and path of the result txt file    
-PyPoll_AnalysisName=os.path.join("..","PyPoll","analysis","PyPoll_Analysis.txt")
-#print the results in txt file
-PyPoll_Analysis=open(PyPoll_AnalysisName, "w")
-PyPoll_Analysis.write("Election Results\n")
-PyPoll_Analysis.write("-------------------------------\n")
-PyPoll_Analysis.write("Total Votes:"+str(count))+"\n")
-PyPoll_Analysis.write("Total Profits and Loss:"+"$"+str(Total_PNL)+"\n")
-PyPoll_Analysis.write("Average PNL Change:"+"$"+str(Average_Change_PNL))
-PyPoll_Analysis.write("Greatest increase PNL:"+str(Related_increase_month)+" "+str(Greatest_increase_PNL)+"\n")
-PyPoll_Analysis.write("Greatest decrease PNL:"+str(Related_decrease_month)+" "+str(Greatest_decrease_PNL)+"\n")
+    PyPoll_Analysis.close()  
 
-PyPoll_Analysis.close()
+
